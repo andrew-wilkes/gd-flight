@@ -28,16 +28,16 @@ func apply_thrust():
 	pass
 
 func control_surfaces():
-	var v = Vector3(1, 0, 0)
-	rotate_object(v, $Elevator, elevator)
-	rotate_object(v, $LeftAileron, -ailerons)
-	rotate_object(v, $RightAileron, ailerons)
-	v = Vector3(0, 1, 0)
-	rotate_object(v, $Rudder, rudder)
+	var axis = Vector3(1, 0, 0)
+	rotate_object(axis, $Elevator, elevator)
+	rotate_object(axis, $LeftAileron, -ailerons)
+	rotate_object(axis, $RightAileron, ailerons)
+	axis = Vector3(0, 1, 0)
+	rotate_object(axis, $Rudder, rudder)
 
-func rotate_object(v, ob, amount):
+func rotate_object(axis, ob, amount):
 	ob.transform.basis = Basis() # reset rotation
-	ob.rotate_object_local(v, amount * MAX_PHI)
+	ob.rotate_object_local(axis, amount * MAX_PHI)
 
 func process_inputs(d):
 	if Input.is_action_pressed("ui_up"):
