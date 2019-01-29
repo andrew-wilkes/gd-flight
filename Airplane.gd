@@ -4,7 +4,7 @@ const SERVO_SPEED = 1.0
 const MAX_PHI = PI / 4.0
 const MAX_THRUST = 10.0
 const G = 9.8
-const WEIGHT = 100.0
+const MASS = 100.0
 const STALL_ANGLE = PI / 2.2
 const GROUND_LEVEL = 0.5
 
@@ -12,7 +12,7 @@ var rudder = 0.0
 var elevator = 0.0
 var ailerons = 0.0
 var thrust = 0.0
-var speed = 0
+var speed = 0.0
 var altitude = GROUND_LEVEL
 var yaw = 0.0
 var roll = 0.0
