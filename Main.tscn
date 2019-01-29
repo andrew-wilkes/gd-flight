@@ -20,7 +20,7 @@ subdivide_depth = 16
 [sub_resource type="PlaneMesh" id=3]
 
 
-[sub_resource type="ShaderMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=4]
 
 shader = ExtResource( 3 )
 shader_param/tarmac = Color( 0.247059, 0.247059, 0.247059, 1 )
@@ -45,5 +45,5 @@ material/0 = null
 [node name="Runway" type="MeshInstance" parent="."]
 transform = Transform( 8, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
 mesh = SubResource( 3 )
-material/0 = SubResource( 5 )
+material/0 = SubResource( 4 )
 

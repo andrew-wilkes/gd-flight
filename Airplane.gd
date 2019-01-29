@@ -1,12 +1,13 @@
 extends Spatial
 
-var SERVO_SPEED = 1.0
-var MAX_PHI = PI / 4.0
-var MAX_THRUST = 10.0
-var G = 9.8
-var WEIGHT = 100.0
-var STALL_ANGLE = PI / 2.2
-var GROUND_LEVEL = 0.5
+const SERVO_SPEED = 1.0
+const MAX_PHI = PI / 4.0
+const MAX_THRUST = 10.0
+const G = 9.8
+const WEIGHT = 100.0
+const STALL_ANGLE = PI / 2.2
+const GROUND_LEVEL = 0.5
+
 var rudder = 0.0
 var elevator = 0.0
 var ailerons = 0.0
