@@ -19,7 +19,17 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 2 )
 
 [node name="Wing" type="MeshInstance" parent="."]
-transform = Transform( 7, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 4, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 2 )
+
+[node name="Wing2" type="MeshInstance" parent="Wing"]
+transform = Transform( 0.375, 0, 0, 0, 1, 0, 0, 0, 0.5, -1.375, 0, 0.5 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 2 )
+
+[node name="Wing3" type="MeshInstance" parent="Wing"]
+transform = Transform( 0.375, 0, 0, 0, 1, 0, 0, 0, 0.5, 1.375, 0, 0.5 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 2 )
 
@@ -40,6 +50,7 @@ mesh = SubResource( 2 )
 material/0 = ExtResource( 3 )
 
 [node name="LeftAileron" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.996652, 0.0817646, 0, -0.0817646, 0.996652, 0, 0, 0 )
 
 [node name="LA" type="MeshInstance" parent="LeftAileron"]
 transform = Transform( 1.5, 0, 0, 0, 0.102, 0, 0, 0, 0.5, 5.5, 0, -0.5 )
