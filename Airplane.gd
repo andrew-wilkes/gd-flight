@@ -2,7 +2,7 @@ extends Spatial
 
 const SERVO_SPEED = 1.0
 const MAX_PHI = PI / 4.0
-const MAX_THRUST = 10.0
+const MAX_THRUST = 2000.0
 const G = 9.8
 const MASS = 100.0
 const STALL_ANGLE = PI / 2.2
@@ -25,7 +25,7 @@ func _process(delta):
 	apply_thrust()
 
 func apply_thrust():
-	pass
+	$RB.thrust = thrust * MAX_THRUST
 
 func control_surfaces():
 	var axis = Vector3(1, 0, 0)

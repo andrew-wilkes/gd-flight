@@ -8,5 +8,7 @@ void vertex() {
 }
 
 void fragment() {
-	ALBEDO = grass.rgb;
+	vec3 g = grass.rgb;
+	g.g *= (1.0 - 0.3 * fract(sin(UV.y) * 7.0 + sin(UV.y) * 32.0));
+	ALBEDO = g;
 }

@@ -32,10 +32,7 @@ shader_param/stripe = Color( 0.835294, 0.835294, 0.835294, 1 )
 [node name="Main" type="Spatial"]
 
 [node name="Airplane" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50024, 0 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.937647, -0.0460913, -0.344521, 0, 0.991169, -0.132602, 0.34759, 0.124334, 0.929366, -12.336, 8.53, 22.125 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50024, -92.2139 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( 0.498726, 0, -0.86676, -0.545491, 0.777126, -0.313871, 0.673581, 0.629345, 0.387573, 46.0296, 0, 0 )
@@ -55,4 +52,7 @@ shape = SubResource( 3 )
 transform = Transform( 8, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
 mesh = SubResource( 4 )
 material/0 = SubResource( 5 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.937647, -0.0460912, -0.34452, 0, 0.991169, -0.132602, 0.34759, 0.124334, 0.929367, -12.336, 8.53, 22.125 )
 
