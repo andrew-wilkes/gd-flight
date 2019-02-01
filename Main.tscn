@@ -32,7 +32,7 @@ shader_param/stripe = Color( 0.835294, 0.835294, 0.835294, 1 )
 [node name="Main" type="Spatial"]
 
 [node name="Airplane" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50024, -92.2139 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50024, -86.4487 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( 0.498726, 0, -0.86676, -0.545491, 0.777126, -0.313871, 0.673581, 0.629345, 0.387573, 46.0296, 0, 0 )
