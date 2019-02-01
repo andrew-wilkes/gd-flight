@@ -29,11 +29,11 @@ func apply_thrust():
 
 func control_surfaces():
 	var axis = Vector3(1, 0, 0)
-	rotate_object(axis, $Elevator, elevator)
-	rotate_object(axis, $LeftAileron, -ailerons)
-	rotate_object(axis, $RightAileron, ailerons)
+	rotate_object(axis, $RB/Elevator, elevator)
+	rotate_object(axis, $RB/LeftAileron, -ailerons)
+	rotate_object(axis, $RB/RightAileron, ailerons)
 	axis = Vector3(0, 1, 0)
-	rotate_object(axis, $Rudder, rudder)
+	rotate_object(axis, $RB/Rudder, rudder)
 
 func rotate_object(axis, ob, amount):
 	ob.transform.basis = Basis() # reset rotation

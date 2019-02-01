@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Airplane.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/ground.shader" type="Shader" id=2]
@@ -17,10 +17,13 @@ size = Vector2( 1000, 1000 )
 subdivide_width = 16
 subdivide_depth = 16
 
-[sub_resource type="PlaneMesh" id=3]
+[sub_resource type="PlaneShape" id=3]
 
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="PlaneMesh" id=4]
+
+
+[sub_resource type="ShaderMaterial" id=5]
 
 shader = ExtResource( 3 )
 shader_param/tarmac = Color( 0.247059, 0.247059, 0.247059, 1 )
@@ -29,7 +32,7 @@ shader_param/stripe = Color( 0.835294, 0.835294, 0.835294, 1 )
 [node name="Main" type="Spatial"]
 
 [node name="Airplane" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50024, 0 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.937647, -0.0460913, -0.344521, 0, 0.991169, -0.132602, 0.34759, 0.124334, 0.929366, -12.336, 8.53, 22.125 )
@@ -42,8 +45,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
+[node name="StaticBody" type="StaticBody" parent="Ground"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
+transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, -0.2, 0 )
+shape = SubResource( 3 )
+
 [node name="Runway" type="MeshInstance" parent="."]
 transform = Transform( 8, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
 
