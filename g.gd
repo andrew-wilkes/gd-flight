@@ -1,5 +1,7 @@
 extends Node
 
+# Globals
+
 var speed = 0
 var altitude = 0
 

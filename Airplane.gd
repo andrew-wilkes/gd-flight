@@ -13,9 +13,6 @@ var rudder = 0.0
 var elevator = 0.0
 var ailerons = 0.0
 var thrust = 0.0
-var yaw = 0.0
-var roll = 0.0
-var pitch = 0.0
 var wind_velocity = Vector3(0, 0, -1)
 
 func _process(delta):
