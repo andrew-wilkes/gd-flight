@@ -91,6 +91,6 @@ mesh = SubResource( 3 )
 material/0 = ExtResource( 4 )
 
 [node name="Camera" type="Camera" parent="RB"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.63, 22.36 )
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 5.7, -17.36 )
 current = true
 

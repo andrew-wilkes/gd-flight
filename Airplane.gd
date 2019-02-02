@@ -21,7 +21,7 @@ var wind_velocity = Vector3(0, 0, -1)
 func _process(delta):
 	process_inputs(delta * SERVO_SPEED)
 	control_surfaces()
-	$RB.set_forces(thrust * MAX_THRUST, wind_velocity, DRAG_FACTOR, LIFT_FACTOR)
+	$RB.set_forces(thrust * MAX_THRUST, wind_velocity, DRAG_FACTOR, LIFT_FACTOR, elevator, ailerons, rudder)
 
 func control_surfaces():
 	var axis = Vector3(1, 0, 0)
