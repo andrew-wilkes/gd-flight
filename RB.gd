@@ -5,6 +5,10 @@ var torque = Vector3(0, 0, 0)
 var w = Vector3(0, 0, 0)
 var f = Vector3(0, 0, 0)
 
+func _process(delta):
+	g.set_speed(get_linear_velocity().length())
+	g.altitude = translation.y
+
 func set_forces(thrust, wind, drag_factor, lift_factor):
 	# Get apparent wind vector
 	var wv = get_linear_velocity() - wind
@@ -16,7 +20,6 @@ func set_forces(thrust, wind, drag_factor, lift_factor):
 	f.z = thrust - w.z * drag_factor # Drag factor determines the max speed at max thrust
 	f.y = w.y * lift_factor # Lift factor is set such that the plane overcomes gravity at take-off speed
 	force = transform.basis.z * f.z + transform.basis.y * f.y
-	print(force.y)
 
 func _integrate_forces(state):
 	add_central_force(force)

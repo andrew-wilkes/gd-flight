@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-physics="*res://physics.gd"
+g="*res://g.gd"
 
 [input]
 

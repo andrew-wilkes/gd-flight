@@ -7,14 +7,12 @@ const STALL_ANGLE = PI / 2.2
 const GROUND_LEVEL = 1.5
 const MAX_SPEED = 100 # m/s 360km/h
 const DRAG_FACTOR = MAX_THRUST / MAX_SPEED / MAX_SPEED
-const LIFT_FACTOR = 400.0
+const LIFT_FACTOR = 600.0
 
 var rudder = 0.0
 var elevator = 0.0
 var ailerons = 0.0
 var thrust = 0.0
-var speed = 0.0
-var altitude = GROUND_LEVEL
 var yaw = 0.0
 var roll = 0.0
 var pitch = 0.0
@@ -24,8 +22,6 @@ func _process(delta):
 	process_inputs(delta * SERVO_SPEED)
 	control_surfaces()
 	$RB.set_forces(thrust * MAX_THRUST, wind_velocity, DRAG_FACTOR, LIFT_FACTOR)
-	speed = $RB.get_linear_velocity().length() * 3.6 # km/h
-	print(speed)
 
 func control_surfaces():
 	var axis = Vector3(1, 0, 0)
