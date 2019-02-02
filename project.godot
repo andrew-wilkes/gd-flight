@@ -19,6 +19,10 @@ config/name="GD Flight"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+physics="*res://physics.gd"
+
 [input]
 
 ui_rudder_left={

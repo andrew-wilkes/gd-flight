@@ -3,10 +3,11 @@ extends Spatial
 const SERVO_SPEED = 1.0
 const MAX_PHI = PI / 4.0
 const MAX_THRUST = 2000.0
-const G = 9.8
-const MASS = 100.0
 const STALL_ANGLE = PI / 2.2
-const GROUND_LEVEL = 0.5
+const GROUND_LEVEL = 1.5
+const MAX_SPEED = 100 # m/s 360km/h
+const DRAG_FACTOR = MAX_THRUST / MAX_SPEED / MAX_SPEED
+const LIFT_FACTOR = 400.0
 
 var rudder = 0.0
 var elevator = 0.0
@@ -17,15 +18,14 @@ var altitude = GROUND_LEVEL
 var yaw = 0.0
 var roll = 0.0
 var pitch = 0.0
-var wind = Vector3(0, 0, -1)
+var wind_velocity = Vector3(0, 0, -1)
 
 func _process(delta):
 	process_inputs(delta * SERVO_SPEED)
 	control_surfaces()
-	apply_thrust()
-
-func apply_thrust():
-	$RB.thrust = thrust * MAX_THRUST
+	$RB.set_forces(thrust * MAX_THRUST, wind_velocity, DRAG_FACTOR, LIFT_FACTOR)
+	speed = $RB.get_linear_velocity().length() * 3.6 # km/h
+	print(speed)
 
 func control_surfaces():
 	var axis = Vector3(1, 0, 0)
