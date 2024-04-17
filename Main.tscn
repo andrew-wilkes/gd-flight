@@ -6,13 +6,11 @@
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
-
 shader = ExtResource( 2 )
 shader_param/grass = Color( 0.227451, 0.501961, 0.196078, 1 )
 shader_param/ocean = Color( 0.211765, 0.301961, 0.890196, 1 )
 
 [sub_resource type="PlaneMesh" id=2]
-
 material = SubResource( 1 )
 size = Vector2( 1000, 1000 )
 subdivide_width = 16
@@ -20,12 +18,9 @@ subdivide_depth = 16
 
 [sub_resource type="PlaneShape" id=3]
 
-
 [sub_resource type="PlaneMesh" id=4]
 
-
 [sub_resource type="ShaderMaterial" id=5]
-
 shader = ExtResource( 3 )
 shader_param/tarmac = Color( 0.247059, 0.247059, 0.247059, 1 )
 shader_param/stripe = Color( 0.835294, 0.835294, 0.835294, 1 )
@@ -41,7 +36,6 @@ transform = Transform( 0.498726, 0, -0.86676, -0.545491, 0.777126, -0.313871, 0.
 [node name="Ground" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Ground"]
 
@@ -58,4 +52,3 @@ material/0 = SubResource( 5 )
 transform = Transform( 0.937647, -0.0460912, -0.34452, 0, 0.991169, -0.132602, 0.34759, 0.124334, 0.929367, -12.336, 8.53, 22.125 )
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
-

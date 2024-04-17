@@ -49,7 +49,7 @@ func process_inputs(d):
 		thrust += d
 	if Input.is_action_pressed("ui_less_thrust"):
 		thrust -= d
-	if Input.is_action_pressed("ui_quit"):
+	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 	# limit range of values
 	elevator = clamp(elevator, -1, 1)
